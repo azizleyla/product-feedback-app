@@ -26,62 +26,19 @@
       ]
     },
     {
-      "id": 2,
-      "title": "Add a dark theme option",
-      "desc": "It would help people with light sensitivities and who prefer dark mode.s",
-      "vote": "99",
+      "title": "Add a dark theme options",
+      "desc": "It would help people with light sensitivities and who prefer dark modes",
       "category": "Feature",
-      "comments": [
-        {
-          "user": {
-            "name": "James Skinner",
-            "username": "@hummingbird1",
-            "img": "https://i.ibb.co/wwqspVM/user2.png"
-          },
-          "content": "Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently has."
-        },
-        {
-          "user": {
-            "name": "James Skinner",
-            "username": "@hummingbird1",
-            "img": "https://i.ibb.co/wwqspVM/user2.png"
-          },
-          "content": "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
-          "replies": [
-            {
-              "user": {
-                "name": "Anna Valentine",
-                "username": "@annev1990",
-                "img": "https://i.ibb.co/gRBMTx2/user3.png"
-              },
-              "content": "@hummingbird1  While waiting for dark mode, there are browser extensions that will also do the job. Search for 'dark theme' followed by your browser. There might be a need to turn off the extension for sites with naturally black backgrounds though."
-            },
-            {
-              "user": {
-                "name": "Ryan Welles",
-                "username": "@voyager.344",
-                "img": "https://i.ibb.co/Ky82Wnq/user4.png"
-              },
-              "content": "@annev1990  Good point! Using any kind of style extension is great and can be highly customizable, like the ability to change contrast and brightness. I'd prefer not to use one of such extensions, however, for security and privacy reasons."
-            }
-          ]
-        },
-        {
-          "user": {
-            "name": "Leyla Aziz",
-            "username": "@leylaziz",
-            "img": ""
-          },
-          "content": "Can't wait for dark mode!"
-        }
-      ]
+      "id": 2,
+      "vote": 10,
+      "comments": []
     },
     {
-      "id": 3,
       "title": "Ability to follow others",
       "desc": "Stay updated on comments and solutions other people post.",
-      "vote": 42,
       "category": "Feature",
+      "id": 3,
+      "vote": 42,
       "comments": [
         {
           "user": {
@@ -127,6 +84,32 @@
       "vote": 3,
       "category": "Bug",
       "comments": []
+    },
+    {
+      "title": "Allow image/video upload ",
+      "desc": "Images and screencasts can enhance comments on solutions.",
+      "category": "Enhancement",
+      "id": 6,
+      "vote": 10,
+      "comments": []
+    },
+    {
+      "title": "Q&A within the challenge hubs",
+      "desc": "Challenge-specific Q&A would make for easy reference.",
+      "category": "UI",
+      "id": 7,
+      "vote": 10,
+      "comments": [
+        {
+          "id": "89ecb3a2-4072-473e-b498-b5a595dd96ad",
+          "user": {
+            "name": "Leyla Aziz",
+            "username": "@leylaziz",
+            "img": ""
+          },
+          "content": "Q&A is better!!"
+        }
+      ]
     }
   ]
 }

@@ -1,21 +1,85 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
-
+import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import AddButton from '../common/buttons/AddButton';
-import { Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import GoBackBtn from '../common/buttons/GoBackBtn';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { FeedbackApi } from '../../api/feedbackApi';
+import { ApiQueryKeys } from "../../constants/api.constants"
 
 const FeedbackForm = () => {
+    const navigate = useNavigate()
+    const queryClient = useQueryClient()
+    const { id } = useParams()
+
+
+    const isEdit = !!id
+    const { data } = useQuery({
+        queryKey: [ApiQueryKeys.feedbacks],
+        queryFn: () => FeedbackApi.getAll(),
+        keepPreviousData: true
+    })
+
+    const selectedFeedback = data?.find(item => item.id === Number(id))
+
+
     const formik = useFormik({
         initialValues: {
             title: '',
-            desc: ""
+            desc: "",
+            category: "Feature"
+
         },
+        validationSchema: Yup.object({
+            title: Yup.string().required("Can't be empty"),
+            desc: Yup.string().required("Can't be empty"),
+
+
+        }),
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            const data = {
+                ...values,
+                id: Number(id),
+                vote: selectedFeedback?.vote ? selectedFeedback?.vote : 10,
+                comments: selectedFeedback?.comments ? selectedFeedback.comments : []
+
+            }
+            if (isEdit) {
+                updateFeedbackMutation.mutate(data)
+            } else {
+                addFeedbackMutation.mutate(data)
+            }
+
+
         },
     });
+
+
+    const addFeedbackMutation = useMutation(FeedbackApi.addFeedback, {
+        onSuccess: (data) => {
+            navigate('/')
+            queryClient.invalidateQueries([ApiQueryKeys.feedbacks])
+        }
+    })
+
+    useEffect(() => {
+        if (isEdit) {
+            formik.setFieldValue('title', selectedFeedback?.title)
+            formik.setFieldValue('desc', selectedFeedback.desc)
+            formik.setFieldValue("category", selectedFeedback?.category)
+        }
+    }, [id, data])
+
+    const updateFeedbackMutation = useMutation(FeedbackApi.updateComments, {
+        onSuccess: () => {
+            navigate('/')
+            queryClient.invalidateQueries([ApiQueryKeys.feedbacks])
+        }
+    })
+
+
     return (
         <div className='container mx-auto max-w-[600px] py-6  '>
             <GoBackBtn />
@@ -32,6 +96,7 @@ const FeedbackForm = () => {
                             <span className='text-[#647196] text-sm'>Add a short, descriptive headline</span>
                         </label>
                         <input
+
                             className='bg-[#F7F8FD] rounded-md h-12 w-full outline-none mt-4 pl-4'
                             id="title"
                             name="title"
@@ -39,6 +104,8 @@ const FeedbackForm = () => {
                             onChange={formik.handleChange}
                             value={formik.values.title}
                         />
+                        {formik.touched.title && <span className='text-red-600 text-sm'>{formik.errors.title}</span>}
+
                     </div>
                     <div className='my-6'>
                         <label htmlFor="title">
@@ -51,15 +118,17 @@ const FeedbackForm = () => {
                             className='bg-[#F7F8FD] rounded-md h-12 w-full outline-none mt-4 pl-4 cursor-pointer text-[#3A4374] text-base font-normal'
                             id="category"
                             name="category"
+
                             onChange={formik.handleChange}
                             value={formik.values.category}
                         >
                             <option value="Feature">Feature</option>
-                            <option value="Feature">UI</option>
-                            <option value="Feature">UX</option>
-                            <option value="Feature">Enhancement</option>
-                            <option value="Feature">Bug</option>
+                            <option value="UI">UI</option>
+                            <option value="UX">UX</option>
+                            <option value="Enhancement">Enhancement</option>
+                            <option value="Bug">Bug</option>
                         </select>
+
                     </div>
                     <div>
 
@@ -76,9 +145,12 @@ const FeedbackForm = () => {
                             onChange={formik.handleChange}
                             value={formik.values.desc}
                         />
+                        {formik.touched.desc && <span className='text-red-600 text-sm'>{formik.errors.desc}</span>}
+
+
                     </div>
                     <div className='flex justify-end mt-8 gap-4'>
-                        <Link to="/" className='bg-[#3a4374] text-white rounded-md  py-3 px-6 font-bold'>Cancel</Link>
+                        {/* <Link to="/" className='bg-[#3a4374] text-white rounded-md  py-3 px-6 font-bold'>Cancel</Link> */}
                         <AddButton />
                     </div>
                 </form>

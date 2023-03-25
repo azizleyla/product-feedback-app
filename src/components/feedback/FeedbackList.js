@@ -17,6 +17,7 @@ const FeedbackList = ({ activeBtn, setActiveBtn }) => {
     })
     const feedbacksData = data || []
     const [feedbacks, setFeedbacks] = useState(feedbacksData)
+    console.log(feedbacksData)
 
     useEffect(() => {
         if (activeBtn !== 'All') {

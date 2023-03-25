@@ -1,5 +1,5 @@
 import React from 'react'
-import { Img } from "../../../Data/Img"
+import { Img } from "../../Data/Img"
 import AddComment from './AddComment'
 import CommentItem from './CommentItem'
 

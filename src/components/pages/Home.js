@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import FeedbackList from '../component/feedback/FeedbackList'
-import Sidebar from '../component/sidebar/Sidebar'
+import FeedbackList from '../feedback/FeedbackList'
+import Sidebar from '../sidebar/Sidebar'
 
 const Home = () => {
     const [activeBtn, setActiveBtn] = useState('All')

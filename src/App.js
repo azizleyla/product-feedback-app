@@ -1,8 +1,8 @@
 import './App.css';
 import { Route, Router, Routes } from 'react-router-dom';
-import FeedbackDetail from './component/feedback/FeedbackDetail';
-import Home from './pages/Home';
-import FeedbackForm from './component/feedback/FeedbackForm';
+import FeedbackDetail from './components/feedback/FeedbackDetail';
+import Home from './components/pages/Home';
+import FeedbackForm from './components/feedback/FeedbackForm';
 
 function App() {
   return (

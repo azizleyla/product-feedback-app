@@ -8,7 +8,9 @@
       "category": "Enhancement",
       "status": "Suggestion",
       "comments": [
+        
         {
+          "id":0,
           "user": {
             "name": "Elijah Moss",
             "username": "@elijah",
@@ -43,7 +45,9 @@
       "id": 3,
       "vote": 42,
       "comments": [
+    
         {
+          "id":1,
           "user": {
             "name": "James Skinner",
             "username": "@hummingbird1",
@@ -52,7 +56,9 @@
           "content": "Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently has."
         },
         {
+          "id":2,
           "user": {
+           
             "name": "James Skinner",
             "username": "@hummingbird1",
             "img": "https://i.ibb.co/wwqspVM/user2.png"
@@ -60,6 +66,7 @@
           "content": "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
           "replies": [
             {
+              "id":40,
               "user": {
                 "name": "Anna Valentine",
                 "username": "@annev1990",
@@ -70,6 +77,7 @@
           ]
         },
         {
+
           "id": "cc650f46-73f0-46b1-badd-07b9c2183896",
           "user": {
             "name": "Leyla Aziz",
@@ -95,6 +103,33 @@
       "category": "Feature",
       "status": "In-Progress",
       "id": 5,
+      "vote": 10,
+      "comments": []
+    },
+    {
+      "title": "Images loading",
+      "desc": "Images are loading lazy. Please, fix it",
+      "category": "UX",
+      "status": "Live",
+      "id": 6,
+      "vote": 10,
+      "comments": []
+    },
+    {
+      "title": "Q&A within the challenge hubs",
+      "desc": "Challenge-specific Q&A would make for easy reference.",
+      "category": "Feature",
+      "status": "Suggestion",
+      "id": 7,
+      "vote": 10,
+      "comments": []
+    },
+    {
+      "title": "Allow image/video upload ",
+      "desc": "Images and screencasts can enhance comments on solutions.",
+      "category": "Enhancement",
+      "status": "Suggestion",
+      "id": 8,
       "vote": 10,
       "comments": []
     }

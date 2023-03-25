@@ -2,12 +2,10 @@ import React from 'react'
 import { FaComment } from 'react-icons/fa'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { Link, useNavigate } from 'react-router-dom'
+import { findCountComments } from '../../utils/helpers'
 
 const FeedbackItem = ({ feedback }) => {
 
-    const repliesData = feedback?.comments?.filter(item => item.replies)
-    const repliesCount = repliesData?.reduce((a, c) => a + c?.replies.length, 0)
-    const totalCount = feedback?.comments ? feedback?.comments?.length + repliesCount : 0;
     const navigate = useNavigate();
 
     const handleNavigate = (feedback) => {
@@ -30,7 +28,7 @@ const FeedbackItem = ({ feedback }) => {
                 </div>
                 <div className='flex items-center ml-auto gap-1'>
                     <FaComment className='text-[#cdd2ee]' />
-                    <span>{totalCount}</span>
+                    <span>{findCountComments(feedback?.comments)}</span>
                 </div>
             </div>
         </div >

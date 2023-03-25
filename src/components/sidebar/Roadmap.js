@@ -33,6 +33,8 @@ const Roadmap = () => {
     const inProgressCount = data?.filter(item => item.status === 'In-Progress').length;
     const liveCount = data?.filter(item => item.status === 'Live').length
 
+
+
     return (
         <div className='bg-white rounded-lg py-5 px-6'>
             <div className='flex justify-between mb-6'>

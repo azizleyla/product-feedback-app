@@ -15,7 +15,7 @@ const FeedbackList = ({ activeBtn, setActiveBtn }) => {
         queryFn: () => FeedbackApi.getAll(),
         keepPreviousData: true
     })
-    const feedbacksData = data.filter(item => item.status === 'Suggestion') || []
+    const feedbacksData = data?.filter(item => item.status === 'Suggestion') || []
     const [feedbacks, setFeedbacks] = useState(feedbacksData)
     console.log(feedbacksData)
 

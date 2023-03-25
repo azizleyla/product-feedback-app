@@ -6,6 +6,7 @@
       "desc": "Easier to search for solutions based on a specific stack.",
       "vote": "112",
       "category": "Enhancement",
+      "status": "Suggestion",
       "comments": [
         {
           "user": {
@@ -31,12 +32,14 @@
       "category": "Feature",
       "id": 2,
       "vote": 10,
-      "comments": []
+      "comments": [],
+      "status": "Suggestion"
     },
     {
       "title": "Ability to follow others",
       "desc": "Stay updated on comments and solutions other people post.",
       "category": "Feature",
+      "status": "Planned",
       "id": 3,
       "vote": 42,
       "comments": [
@@ -78,38 +81,22 @@
       ]
     },
     {
-      "id": 4,
       "title": "Preview images not loading",
       "desc": "Challenge preview images are missing when you apply a filter.",
-      "vote": 3,
       "category": "Bug",
+      "status": "Live",
+      "id": 4,
+      "vote": 3,
       "comments": []
     },
     {
-      "title": "Allow image/video upload ",
-      "desc": "Images and screencasts can enhance comments on solutions.",
-      "category": "Enhancement",
-      "id": 6,
+      "title": "bey",
+      "desc": "desd",
+      "category": "Feature",
+      "status": "In-Progress",
+      "id": 5,
       "vote": 10,
       "comments": []
-    },
-    {
-      "title": "Q&A within the challenge hubs",
-      "desc": "Challenge-specific Q&A would make for easy reference.",
-      "category": "UI",
-      "id": 7,
-      "vote": 10,
-      "comments": [
-        {
-          "id": "89ecb3a2-4072-473e-b498-b5a595dd96ad",
-          "user": {
-            "name": "Leyla Aziz",
-            "username": "@leylaziz",
-            "img": ""
-          },
-          "content": "Q&A is better!!"
-        }
-      ]
     }
   ]
 }

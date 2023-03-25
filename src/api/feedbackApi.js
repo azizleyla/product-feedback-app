@@ -9,6 +9,10 @@ export const FeedbackApi = ({
         const response = await baseApi.post("/feedbacks", data);
         return response.data;
     },
+    async deleteFeedback(id) {
+        const response = await baseApi.delete(`/feedbacks/${id}`);
+        return response.data;
+    },
     async updateComments(data) {
         const response = await baseApi.put(`/feedbacks/${data.id}`, data)
         return response.data

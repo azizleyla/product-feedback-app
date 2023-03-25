@@ -24,7 +24,7 @@ const FeedbackItem = ({ feedback }) => {
                 </div>
 
                 <div className='flex flex-col ml-10'>
-                    <p onClick={() => handleNavigate(feedback)} className='cursor-pointer text-[#3a4374] font-bold text-lg'>{feedback?.title}</p>
+                    <p onClick={() => handleNavigate(feedback)} className='cursor-pointer hover:text-[#4661E6] text-[#3a4374] font-bold text-lg'>{feedback?.title}</p>
                     <p className='text-[#647196] font-normal text-base'>{feedback?.desc}</p>
                     <div className='bg-[#f2f4fe] text-[#4661e6] font-semibold w-28 flex items-center justify-center rounded-lg mt-3'>{feedback?.category}</div>
                 </div>

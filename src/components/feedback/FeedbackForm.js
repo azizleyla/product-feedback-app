@@ -3,7 +3,7 @@ import { FaPlus } from 'react-icons/fa'
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import AddButton from '../common/buttons/AddButton';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import GoBackBtn from '../common/buttons/GoBackBtn';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { FeedbackApi } from '../../api/feedbackApi';
@@ -29,7 +29,8 @@ const FeedbackForm = () => {
         initialValues: {
             title: '',
             desc: "",
-            category: "Feature"
+            category: "Feature",
+            status: "Suggestion",
 
         },
         validationSchema: Yup.object({
@@ -43,7 +44,8 @@ const FeedbackForm = () => {
                 ...values,
                 id: Number(id),
                 vote: selectedFeedback?.vote ? selectedFeedback?.vote : 10,
-                comments: selectedFeedback?.comments ? selectedFeedback.comments : []
+                comments: selectedFeedback?.comments ? selectedFeedback.comments : [],
+
 
             }
             if (isEdit) {
@@ -67,8 +69,9 @@ const FeedbackForm = () => {
     useEffect(() => {
         if (isEdit) {
             formik.setFieldValue('title', selectedFeedback?.title)
-            formik.setFieldValue('desc', selectedFeedback.desc)
+            formik.setFieldValue('desc', selectedFeedback?.desc)
             formik.setFieldValue("category", selectedFeedback?.category)
+            formik.setFieldValue("status", selectedFeedback?.status)
         }
     }, [id, data])
 
@@ -79,6 +82,16 @@ const FeedbackForm = () => {
         }
     })
 
+    const deleteFeedbackMutation = useMutation(FeedbackApi.deleteFeedback, {
+        onSuccess: () => {
+            queryClient.resetQueries([ApiQueryKeys.feedbacks]);
+            navigate('/')
+        }
+    })
+    const handleDelete = (id) => {
+        deleteFeedbackMutation.mutate(id)
+    }
+
 
     return (
         <div className='container mx-auto max-w-[600px] py-6  '>
@@ -87,7 +100,9 @@ const FeedbackForm = () => {
                 <button className='rounded-full h-14 w-14 text-white -top-6 left-7 flex items-center justify-center radical-bg absolute'>
                     <FaPlus />
                 </button>
-                <h4 className='text-[#3a4374] font-bold text-xl mt-6'>Create New Feedback</h4>
+                <h4 className='text-[#3a4374] font-bold text-xl mt-6'>
+                    {isEdit ? `Editing "${selectedFeedback?.title}"` : 'Create New Feedback'}
+                </h4>
                 <form onSubmit={formik.handleSubmit} className="mt-10">
                     <div>
                         <label htmlFor="title">
@@ -130,6 +145,30 @@ const FeedbackForm = () => {
                         </select>
 
                     </div>
+                    {isEdit && <div className='my-6'>
+                        <label htmlFor="title">
+                            <span className='text-[#3A4374] font-bold text-sm'>Update Status</span>
+                            <br />
+                            <span className='text-[#647196] text-sm'>Change feature state</span>
+                        </label>
+
+                        <select
+                            className='bg-[#F7F8FD] rounded-md h-12 w-full outline-none mt-4 pl-4 cursor-pointer text-[#3A4374] text-base font-normal'
+                            id="status"
+                            name="status"
+
+                            onChange={formik.handleChange}
+                            value={formik.values.status}
+                        >
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Planned">Planned</option>
+                            <option value="In-Progress">In-Progress</option>
+                            <option value="Live">Live</option>
+
+                        </select>
+
+                    </div>}
+
                     <div>
 
                         <label htmlFor="title">
@@ -150,8 +189,9 @@ const FeedbackForm = () => {
 
                     </div>
                     <div className='flex justify-end mt-8 gap-4'>
-                        {/* <Link to="/" className='bg-[#3a4374] text-white rounded-md  py-3 px-6 font-bold'>Cancel</Link> */}
-                        <AddButton />
+                        {isEdit && <button onClick={() => handleDelete(id)} className='mr-auto text-white bg-[#D73737] rounded-md py-2 px-4'>Delete</button>}
+                        <Link to="/" className='bg-[#3a4374] text-white rounded-md  py-3 px-6 font-bold'>Cancel</Link>
+                        <AddButton isEdit={isEdit} />
                     </div>
                 </form>
 

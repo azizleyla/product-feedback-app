@@ -1,12 +1,13 @@
 import { useQuery } from '@tanstack/react-query'
 import React, { useEffect, useState } from 'react'
-import { FaComment, FaPlus } from "react-icons/fa"
-import { MdKeyboardArrowDown } from "react-icons/md"
+import Fade from 'react-reveal/Fade'
 import { useNavigate } from 'react-router-dom'
 import { FeedbackApi } from '../../api/feedbackApi'
 import { ApiQueryKeys } from '../../constants/api.constants'
 import AddButton from '../common/buttons/AddButton'
 import FeedbackItem from './FeedbackItem'
+
+
 const FeedbackList = ({ activeBtn, setActiveBtn }) => {
     const navigate = useNavigate()
 
@@ -41,7 +42,9 @@ const FeedbackList = ({ activeBtn, setActiveBtn }) => {
             </div>
             {feedbacks.map((item) => {
                 return (
-                    <FeedbackItem feedback={item} />
+                    <Fade bottom>
+                        <FeedbackItem feedback={item} />
+                    </Fade>
                 )
             })}
 

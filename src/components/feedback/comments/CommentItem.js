@@ -9,7 +9,7 @@ const CommentItem = ({ comment }) => {
     const [isShowCommentBox, setIsShowCommentBox] = useState(false)
     const [selectedCommentId, setSelectedCommentId] = useState('')
     const [selectedReplyId, setSelectedReplyId] = useState('')
-    console.log(selectedCommentId, selectedReplyId)
+
     return (
         <div>
             <div className='flex mt-9 items-start'>
@@ -18,7 +18,7 @@ const CommentItem = ({ comment }) => {
                     <h4 className='font-bold text-[#3a4374] text-md'>{user.name}</h4>
                     <p className='text-[#647196]'>{user.username}</p>
                     <p>{content}</p>
-                    {isShowCommentBox && id === selectedCommentId && <PostReply />}
+                    {isShowCommentBox && id === selectedCommentId && <PostReply commentId={selectedCommentId} />}
 
                 </div>
                 <button onClick={() => {
@@ -27,15 +27,16 @@ const CommentItem = ({ comment }) => {
                 }
                 } className='ml-auto font-bold text-[#4661e6]'>Reply</button>
             </div>
-            {replies && replies.map((reply) => (
+            {replies && replies?.map((reply) => (
+                <>
                 <div className='ml-20'>
                     <div className='flex  mt-9 items-start'>
                         <img className='w-12 h-12 object-cover mr-7' src={reply.user?.img} alt="" />
                         <div className='flex flex-col'>
-                            <h4 className='font-bold text-[#3a4374] text-md'>{reply.user.name}</h4>
-                            <p className='text-[#647196]'>{reply.user.username}</p>
-                            <p>{reply.content}</p>
-                            {isShowReplyBox && reply?.id === selectedReplyId && <PostReply />}
+                            <h4 className='font-bold text-[#3a4374] text-md'>{reply?.user?.name}</h4>
+                            <p className='text-[#647196]'>{reply?.user?.username}</p>
+                            <p>{reply?.content}</p>
+                            {isShowReplyBox && reply?.id === selectedReplyId && <PostReply commentID={reply?.commentId} replyId={reply?.id} />}
                         </div>
                         <button onClick={() => {
 
@@ -47,6 +48,29 @@ const CommentItem = ({ comment }) => {
                     </div>
 
                 </div>
+             {reply?.replies && reply?.replies.map((item) =>(
+        <div className='ml-28'>
+                    <div className='flex  mt-9 items-start'>
+                        <img className='w-12 h-12 object-cover mr-7' src={item.user?.img} alt="" />
+                        <div className='flex flex-col'>
+                            <h4 className='font-bold text-[#3a4374] text-md'>{item?.user?.name}</h4>
+                            <p className='text-[#647196]'>{item?.user?.username}</p>
+                            <p>{item?.content}</p>
+                            {isShowReplyBox && reply?.id === selectedReplyId && <PostReply commentID={item?.commentId} replyId={item?.id} />}
+                        </div>
+                        <button onClick={() => {
+
+                            setIsShowReplyBox(!isShowReplyBox);
+                            setSelectedReplyId(reply?.id)
+
+                        }} className='ml-auto font-bold text-[#4661e6]'>Reply</button>
+
+                    </div>
+
+                </div>
+    ))}
+              
+                </>
             ))}
 
         </div>

@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Add tags for solutions",
       "desc": "Easier to search for solutions based on a specific stack.",
-      "vote": "112",
+      "vote": 120,
       "category": "Enhancement",
       "status": "Suggestion",
       "comments": [
@@ -63,19 +63,30 @@
                 "img": ""
               },
               "content": "mnj"
+            },
+            {
+              "id": "2a05ea75-87f1-4b2c-9e32-8a6337e138d2",
+              "user": {
+                "name": "Ali Aziz",
+                "username": "@ali",
+                "img": ""
+              },
+              "content": "sala,"
             }
           ]
         }
-      ]
+      ],
+      "isUpvoted": true
     },
     {
       "title": "Add a dark theme options",
       "desc": "It would help people with light sensitivities and who prefer dark modes",
       "category": "Feature",
       "id": 2,
-      "vote": 10,
+      "vote": 2,
       "comments": [],
-      "status": "Suggestion"
+      "status": "Suggestion",
+      "isUpvoted": false
     },
     {
       "title": "Ability to follow others",
@@ -84,6 +95,7 @@
       "status": "Planned",
       "id": 3,
       "vote": 42,
+      "isUpvoted": false,
       "comments": [
         {
           "id": 1,
@@ -186,8 +198,9 @@
       "category": "Feature",
       "status": "Suggestion",
       "id": 7,
-      "vote": 10,
-      "comments": []
+      "vote": 8,
+      "comments": [],
+      "isUpvoted": false
     },
     {
       "title": "Allow image/video upload ",
@@ -195,8 +208,9 @@
       "category": "Enhancement",
       "status": "Suggestion",
       "id": 8,
-      "vote": 10,
-      "comments": []
+      "vote": 11,
+      "comments": [],
+      "isUpvoted": false
     }
   ]
 }

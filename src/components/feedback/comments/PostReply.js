@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { FeedbackApi } from "../../../api/feedbackApi";
 import { ApiQueryKeys } from "../../../constants/api.constants";
 
-const PostReply = ({ commentId ,replyId,commentID}) => {
+const PostReply = ({ commentId, replyId, commentID }) => {
   const [content, setContent] = useState("");
   const { id } = useParams();
   const queryClient = useQueryClient();
@@ -34,31 +34,22 @@ const PostReply = ({ commentId ,replyId,commentID}) => {
       },
       content: content,
     };
-    if(commentId){
-        const selectedObj = selectedFeedback?.comments?.find(
-            (item) => item.id === Number(commentId)
-          );
-          selectedObj['replies']?.push(replyObj);
-
-    }else if(replyId){
-        const selectedReply = selectedFeedback?.comments?.find(item => item.id ===commentID);
-        const a = selectedReply?.replies?.find(item => item.id === replyId)
-         console.log(a)
-        
-         a['replies']= replyObj;
-         console.log(selectedReply)
-
+    if (commentId) {
+      const selectedObj = selectedFeedback?.comments?.find(
+        (item) => item.id === Number(commentId)
+      );
+      selectedObj['replies']?.push(replyObj);
 
     }
 
-  
-  
+
+
     const data = {
       ...selectedFeedback,
       comments: selectedFeedback.comments,
     };
     console.log(data)
-  
+
     updateCommentMutation.mutate(data);
   };
 

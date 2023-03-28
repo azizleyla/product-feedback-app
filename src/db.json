@@ -84,7 +84,17 @@
       "category": "Feature",
       "id": 2,
       "vote": 2,
-      "comments": [],
+      "comments": [
+        {
+          "id": "efb605d3-bf69-4c43-9334-1d78fbe0bf0c",
+          "user": {
+            "name": "Leyla Aziz",
+            "username": "@leylaziz",
+            "img": ""
+          },
+          "content": "new comment"
+        }
+      ],
       "status": "Suggestion",
       "isUpvoted": false
     },
@@ -208,9 +218,9 @@
       "category": "Enhancement",
       "status": "Suggestion",
       "id": 8,
-      "vote": 11,
+      "vote": 12,
       "comments": [],
-      "isUpvoted": false
+      "isUpvoted": true
     }
   ]
 }

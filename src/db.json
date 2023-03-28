@@ -15,18 +15,7 @@
             "username": "@elijah",
             "img": "https://i.ibb.co/k9XMYQm/user1.png"
           },
-          "content": "Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently has.",
-          "replies": [
-            {
-              "id": "815e9e64-8367-4352-98b9-86a79de7312d",
-              "user": {
-                "name": "Ali Aziz",
-                "username": "@ali",
-                "img": ""
-              },
-              "content": "vf"
-            }
-          ]
+          "content": "Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently has."
         },
         {
           "id": 7,
@@ -40,38 +29,20 @@
             {
               "id": 5,
               "user": {
-                "name": "Solmaz Aziz",
+                "name": "Leyla Aziz",
                 "username": "solmaz@gmail",
-                "img": ""
+                "img": "https://i.ibb.co/gRBMTx2/user3.png"
               },
-              "content": "hey"
-            },
-            {
-              "id": "becbda8c-730e-462e-9cee-731f7a7a5ddb",
-              "user": {
-                "name": "Ali Aziz",
-                "username": "@ali",
-                "img": ""
-              },
-              "content": "jk"
-            },
-            {
-              "id": "7e7bd708-b1f5-4fbd-ad9d-d6b3f91b56fa",
-              "user": {
-                "name": "Ali Aziz",
-                "username": "@ali",
-                "img": ""
-              },
-              "content": "mnj"
+              "content": "hey, everyone!"
             },
             {
               "id": "2a05ea75-87f1-4b2c-9e32-8a6337e138d2",
               "user": {
-                "name": "Ali Aziz",
+                "name": "Ali Mamedov",
                 "username": "@ali",
-                "img": ""
+                "img": "https://i.ibb.co/wwqspVM/user2.png"
               },
-              "content": "sala,"
+              "content": "hello"
             }
           ]
         }
@@ -140,27 +111,9 @@
               "user": {
                 "name": "Ali Aziz",
                 "username": "@ali",
-                "img": ""
+                "img": "https://i.ibb.co/wwqspVM/user2.png"
               },
               "content": "B"
-            },
-            {
-              "id": "2cc59f66-e3fc-49d3-bf0f-46a5038d1a7e",
-              "user": {
-                "name": "Ali Aziz",
-                "username": "@ali",
-                "img": ""
-              },
-              "content": "a"
-            },
-            {
-              "id": "58df2838-67ee-4013-950b-87d986e8c251",
-              "user": {
-                "name": "Ali Aziz",
-                "username": "@ali",
-                "img": ""
-              },
-              "content": "as"
             }
           ]
         },
@@ -169,7 +122,7 @@
           "user": {
             "name": "Leyla Aziz",
             "username": "@leylaziz",
-            "img": ""
+            "img": "https://i.ibb.co/gRBMTx2/user3.png"
           },
           "content": "Dark mode is better than!"
         }

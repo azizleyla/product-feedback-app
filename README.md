@@ -41,6 +41,8 @@ See hover states for all interactive elements on the page
 
 # Screenshots
 
+![project](./src/assets/img/screen6.png)
+![project](./src/assets/img/screen7.png)
 ![project](./src/assets/img/screen1.png)
 ![project](./src/assets/img/screen2.png)
 ![project](./src/assets/img/screen3.png)
